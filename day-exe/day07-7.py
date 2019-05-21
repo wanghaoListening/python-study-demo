@@ -33,3 +33,57 @@ class Person(object):
     def play(self):
         print('%s正在愉快的玩耍' %self._name)
 
+
+
+class Student(Person):
+
+    def __init__(self,name,age,grade):
+        super().__init__(name,age)
+        self._grade = grade
+
+    @property
+    def grade(self):
+        return self._grade
+
+    @grade.setter
+    def grade(self,grade):
+        self._grade = grade
+
+    def study(self,course):
+        print('%s正在学习%s' %(self._name,course))
+
+
+class Teacher(Person):
+
+    def __init__(self,name,age,title):
+        super().__init__(name,age)
+        self._title = title
+
+    @property
+    def title(self):
+        return self._title
+
+    @title.setter
+    def title(self,title):
+        self._title = title
+
+    def tech(self,course):
+        print('%s正在教%s课程' %(self._name,course))
+
+
+
+
+def main():
+
+    student = Student('阿乐',21,30)
+    student.study('python课程')
+    student.play()
+
+    teacher = Teacher('周老师',32,'教授')
+    teacher.tech('python课程')
+    teacher.play()
+
+
+
+if __name__ == '__main__':
+    main()
