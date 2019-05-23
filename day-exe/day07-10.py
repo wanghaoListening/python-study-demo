@@ -55,4 +55,49 @@ class Programmer(People):
         super().__init__(name)
         self._working_hour = working_hour
 
+    @property
+    def working_hour(self):
+        return self._working_hour
+
+    @working_hour.setter
+    def working_hour(self,working_hour):
+        self._working_hour = working_hour
+
+    def salary(self):
+        return self._working_hour * 150
+
+
+class Salesman(People):
+    """
+    销售员
+    """
+    def __init__(self,name,sales=0):
+        super().__init__(name)
+        self._name = name
+        self._sales = sales
+
+    @property
+    def sales(self):
+        return self._sales
+
+    @sales.setter
+    def sales(self,sales):
+        self._sales = sales
+
+    def salary(self):
+        return 1200 + (self.sales * 0.05)
+
+
+
+def main():
+    programmer = Programmer('john',40)
+    print(programmer.salary())
+
+    salesman = Salesman('james',40000)
+    print(salesman.sales)
+    print(salesman.salary())
+
+
+if __name__ == '__main__':
+    main()
 
