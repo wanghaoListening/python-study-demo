@@ -1,6 +1,6 @@
 import smtplib
-from email.mime.text import MIMEText
-from email.header import Header
+from cemail.mime.text import MIMEText
+from cemail.header import Header
 
 #第三方smtp服务
 
