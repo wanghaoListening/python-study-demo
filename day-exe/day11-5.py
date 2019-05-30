@@ -13,11 +13,12 @@ from base64 import b64decode
 def main():
 
     client = socket()
-    client.connect(('127.0.0.1', 5588))
+    client.connect(('127.0.0.1', 2288))
     # 定义一个保存二进制数据的对象
     print(client)
     in_data = bytes()
     data = client.recv(1024)
+    print(data)
     while data:
         in_data +=data
         data = client.recv(1024)

@@ -22,6 +22,7 @@ class FileTransferServer(Thread):
         my_dict['filename'] = 'wanghao.jpg'
         # 所以图片的二进制数据要处理成base64编码
         my_dict['data'] = self.data
+        print(self.data)
         # 通过dumps函数将字典处理成JSON字符串
         json_str = dumps(my_dict)
         # 发送json字符串
@@ -35,7 +36,7 @@ def main():
     # 1.创建套接字对象并指定使用哪种传输服务
     server = socket()
     # 2.绑定IP地址和端口(区分不同的服务)
-    server.bind(('127.0.0.1', 5588))
+    server.bind(('127.0.0.1', 2288))
     # 3.开启监听 - 监听客户端连接到服务器
     server.listen(512)
     print('服务器开始监听')
@@ -47,7 +48,9 @@ def main():
         client,addr = server.accept()
         print('客户端'+str(addr)+'连接成功')
         # 启动一个线程来处理客户端请求
-        FileTransferServer(client,data)
+        print(data)
+        fileServer = FileTransferServer(client,data)
+        fileServer.start()
 
 
 if __name__ == '__main__':
