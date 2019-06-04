@@ -66,6 +66,7 @@ class EmployeeFactory():
         emp = None
 
         if emp_type == 'M':
+            #为啥函数调用使用的是形参
             emp =  Manager(*args, **kwargs)
         elif emp_type == 'P':
             emp = Programmer(*args, **kwargs)
