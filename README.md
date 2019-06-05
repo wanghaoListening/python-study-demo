@@ -1,4 +1,6 @@
-# python_examples
+### python_examples
+
+python 学习过程中写的一些demo,Python学习的过程中主要参考了以下资料
 
 http://www.practicepython.org/
 http://www.pythonforbeginners.com/code-snippets-source-code/python-code-examples
