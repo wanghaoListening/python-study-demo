@@ -10,4 +10,3 @@ gen
 target/
 *.class
 *.log
-/django/venv/
