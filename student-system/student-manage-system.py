@@ -1,4 +1,7 @@
 
+
+user_info = []
+
 # 定义功能界面
 
 def info_print():
@@ -10,6 +13,29 @@ def info_print():
     print('5,显示所有学员')
     print('6 退出系统')
     print('-'*20)
+
+
+# 添加用户
+def add_info():
+    """
+    添加用户
+    :return:
+    """
+    new_id = input('输入用户id')
+    new_name = input('输入用户姓名')
+    new_tel = input('输入用户手机号')
+
+    for user in user_info:
+        if new_name == user['name']:
+            print(f'用户名{new_name}以及存在')
+            return
+
+    user_dict = {}
+
+    user_dict['id'] = new_id
+    user_dict['name'] = new_name
+    user_dict['tel'] = new_tel
+    user_info.append(user_dict)
 
 
 while True:
