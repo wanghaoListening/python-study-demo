@@ -25,6 +25,8 @@ def add_info():
     new_name = input('输入用户姓名')
     new_tel = input('输入用户手机号')
 
+    global user_info
+
     for user in user_info:
         if new_name == user['name']:
             print(f'用户名{new_name}以及存在')
@@ -37,6 +39,29 @@ def add_info():
     user_dict['tel'] = new_tel
     user_info.append(user_dict)
 
+def del_info():
+    """
+    删除用户
+    :return:
+    """
+    user_name = input("请输入姓名")
+    global user_info
+    for user in user_info:
+        if user_name == user['name']:
+            user_info.remove(user)
+            break
+    else:
+        print(f'用户{user_name}不存在')
+
+
+def update_info():
+    """
+    更新用户信息
+    :return:
+    """
+
+
+
 
 while True:
 # 1.显示功能界面
@@ -47,9 +72,9 @@ while True:
 
 # 3.按照用户输入的功能序号，执行不同的功能
     if 1 == user_num:
-        pass
+        add_info()
     elif 2 == user_num:
-        pass
+        del_info()
     elif 3 == user_num:
         pass
     elif 4 == user_num:
