@@ -11,7 +11,7 @@ def info_print():
     print('3,修改学员')
     print('4,查询学员')
     print('5,显示所有学员')
-    print('6 退出系统')
+    print('6,退出系统')
     print('-'*20)
 
 
@@ -59,6 +59,37 @@ def update_info():
     更新用户信息
     :return:
     """
+    user_name = input("输入学员信息")
+    global user_info
+    for user in user_info:
+        if user_name == user['name']:
+            tel = input('输入学员新手机号')
+            user['tel'] = tel
+            print("修改成功")
+            break
+    else:
+        print("学员不存在")
+
+def search_info():
+    """
+    查询学员信息
+    :return:
+    """
+    user_name = input("输入学员信息")
+    global user_info
+    for user in user_info:
+        if user_name == user['name']:
+            print(user)
+    else:
+        print(f'学员{user_name}不存在')
+
+def print_all():
+    """
+    显示所有学员信息
+    :return:
+    """
+    for user in user_info:
+        print(f'id:{user["id"]},name:{user["name"]},tel:{user["tel"]}')
 
 
 
@@ -76,13 +107,15 @@ while True:
     elif 2 == user_num:
         del_info()
     elif 3 == user_num:
-        pass
+        update_info()
     elif 4 == user_num:
-        pass
+        search_info()
     elif 5 == user_num:
-        pass
+        print_all()
     elif 6 == user_num:
-        pass
+        exit_flag = input('你确实要退出系统吗，yes/no')
+        if 'yes' == exit_flag:
+            break
     else:
         print('输入有误')
 
