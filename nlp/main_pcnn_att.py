@@ -174,3 +174,6 @@ def predict(model, test_data_loader):
 if __name__ == "__main__":
     import fire
     fire.Fire()
+
+
+# python main_mil.py train --data="NYT"  --batch_size=128
