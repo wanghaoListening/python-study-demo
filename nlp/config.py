@@ -35,7 +35,7 @@ class DefaultConfig(object):
     seed = 3435
     batch_size = 128  # batch size
     use_gpu = True  # user GPU or not
-    gpu_id = 1
+    gpu_id = 0 # if only one gpu can available ,to set gpu_id = 0,
     num_workers = 0  # how many workers for loading data
 
     max_len = 80 + 2  # max_len for each sentence + two padding
