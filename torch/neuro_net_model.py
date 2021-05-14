@@ -9,8 +9,6 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 x = torch.unsqueeze(torch.linspace(-1, 1, 100), dim=1)  # x data (tensor), shape=(100, 1)
 y = x.pow(2) + 0.2*torch.rand(x.size())
 
-
-
 plt.scatter(x.data.numpy(), y.data.numpy())
 plt.show()
 
